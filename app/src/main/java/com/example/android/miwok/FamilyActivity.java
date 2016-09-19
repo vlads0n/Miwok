@@ -14,8 +14,8 @@ public class FamilyActivity extends AppCompatActivity {
         setContentView(R.layout.word_list);
 
         ArrayList<Word> words = new ArrayList<>();
-        words.add(new Word("father", "epe"));
-        words.add(new Word("mother", "eta"));
+        words.add(new Word("father", "әpә"));
+        words.add(new Word("mother", "әta"));
         words.add(new Word("son", "angsi"));
         words.add(new Word("daughter", "tune"));
         words.add(new Word("older brother", "taachi"));

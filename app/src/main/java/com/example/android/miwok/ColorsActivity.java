@@ -20,8 +20,8 @@ public class ColorsActivity extends AppCompatActivity {
         words.add(new Word("gray", "topoppi"));
         words.add(new Word("black", "kululli"));
         words.add(new Word("white", "kelelli"));
-        words.add(new Word("dusty yellow", "topiise"));
-        words.add(new Word("mustard yellow", "chiwiite"));
+        words.add(new Word("dusty yellow", "topiisә"));
+        words.add(new Word("mustard yellow", "chiwiitә"));
 
         WordAdapter adapter = new WordAdapter(this, words);
         ListView listView = (ListView) findViewById(R.id.list);
