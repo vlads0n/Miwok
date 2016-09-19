@@ -28,11 +28,11 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         Word currentWord = getItem(position);
 
-        TextView nameTextView = (TextView) listItemView.findViewById(R.id.miwok_text);
-        nameTextView.setText(currentWord.getMiwokText());
+        TextView miwokTextView = (TextView) listItemView.findViewById(R.id.miwok_text);
+        miwokTextView.setText(currentWord.getMiwokText());
 
-        TextView numberTextView = (TextView) listItemView.findViewById(R.id.default_text);
-        numberTextView.setText(currentWord.getDefaultText());
+        TextView defaultTextView = (TextView) listItemView.findViewById(R.id.default_text);
+        defaultTextView.setText(currentWord.getDefaultText());
 
         return listItemView;
     }
