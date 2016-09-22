@@ -14,8 +14,10 @@ import java.util.ArrayList;
  * Created by Vinnik on 16.09.2016.
  */
 public class WordAdapter extends ArrayAdapter<Word> {
-    public WordAdapter(Context context, ArrayList<Word> objects) {
+    private int color;
+    public WordAdapter(Context context, ArrayList<Word> objects, int color) {
         super(context, 0, objects);
+        this.color = color;
     }
 
     @Override
@@ -41,6 +43,8 @@ public class WordAdapter extends ArrayAdapter<Word> {
         }
         else
             imageView.setVisibility(View.GONE);
+
+        convertView.findViewById(R.id.text_container).setBackgroundColor(color);
 
         return listItemView;
     }
