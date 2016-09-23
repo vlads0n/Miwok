@@ -46,7 +46,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         else
             imageView.setVisibility(View.GONE);
 
-        View textContainer = convertView.findViewById(R.id.text_container);
+        View textContainer = listItemView.findViewById(R.id.text_container);
         int color = ContextCompat.getColor(getContext(), backgroundColor);
         textContainer.setBackgroundColor(color);
 
