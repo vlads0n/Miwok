@@ -16,7 +16,7 @@ public class FamilyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
 
-        ArrayList<Word> words = new ArrayList<>();
+        final ArrayList<Word> words = new ArrayList<>();
         words.add(new Word("father", "әpә", R.drawable.family_father, R.raw.family_father));
         words.add(new Word("mother", "әta", R.drawable.family_mother, R.raw.family_mother));
         words.add(new Word("son", "angsi", R.drawable.family_son, R.raw.family_son));
@@ -35,7 +35,8 @@ public class FamilyActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                MediaPlayer mediaPlayer = MediaPlayer.create(FamilyActivity.this, position);
+                Word word = words.get(position);
+                MediaPlayer mediaPlayer = MediaPlayer.create(FamilyActivity.this, word.getAudio());
                 mediaPlayer.start();
             }
         });

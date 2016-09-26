@@ -16,7 +16,7 @@ public class PhrasesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
 
-        ArrayList<Word> words = new ArrayList<>();
+        final ArrayList<Word> words = new ArrayList<>();
         words.add(new Word("Where are you going?", "minto wuksus", R.raw.phrase_where_are_you_going));
         words.add(new Word("What is your name?", "tinnә oyaase'nә", R.raw.phrase_what_is_your_name));
         words.add(new Word("My name is...", "oyaaset...", R.raw.phrase_my_name_is));
@@ -35,7 +35,8 @@ public class PhrasesActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                MediaPlayer mediaPlayer = MediaPlayer.create(PhrasesActivity.this, position);
+                Word word = words.get(position);
+                MediaPlayer mediaPlayer = MediaPlayer.create(PhrasesActivity.this, word.getAudio());
                 mediaPlayer.start();
             }
         });

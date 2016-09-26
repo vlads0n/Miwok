@@ -16,7 +16,7 @@ public class ColorsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
 
-        ArrayList<Word> words = new ArrayList<>();
+        final ArrayList<Word> words = new ArrayList<>();
         words.add(new Word("red", "wetetti", R.drawable.color_red, R.raw.color_red));
         words.add(new Word("green", "chokokki", R.drawable.color_green, R.raw.color_green));
         words.add(new Word("brown", "takaakki", R.drawable.color_brown, R.raw.color_brown));
@@ -33,7 +33,8 @@ public class ColorsActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                MediaPlayer mediaPlayer = MediaPlayer.create(ColorsActivity.this, position);
+                Word word = words.get(position);
+                MediaPlayer mediaPlayer = MediaPlayer.create(ColorsActivity.this, word.getAudio());
                 mediaPlayer.start();
             }
         });
