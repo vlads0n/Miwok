@@ -86,8 +86,6 @@ public class NumbersFragment extends Fragment {
                 }
             }
         });
-
-
         return rootView;
     }
 
